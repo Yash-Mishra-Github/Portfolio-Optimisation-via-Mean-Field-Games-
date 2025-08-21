@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=stage2_base
+#SBATCH --output=logs/stage2_base_%j.out
+#SBATCH --error=logs/stage2_base_%j.err
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --partition=cpu
+#SBATCH --qos=normal
+
+module load Anaconda3
+source activate mfg_env
+
+echo "Running Stage II baseline (train_mfg.py, LSTM + signatures)"
+srun python -u src/train_mfg.py \
+  --model lstm \
+  --data data/processed_market_data.csv \
+  --out outputs/stage2_base_${SLURM_JOB_ID} \
+  --iters 2000 \
+  --N 512 \
+  --K 252
