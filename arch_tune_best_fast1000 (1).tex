@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Best runs by Sharpe per architecture and tuning (fast1000)}
+\label{tab:arch_tune_best_fast}
+\small
+\begin{tabular}{l l r r r r r r}
+\toprule
+arch & tune & run & length & ann\_return & ann\_vol & sharpe & sortino & max\_dd & calmar & var\_95 & cvar\_95 \\ \midrule
+ffn & base & ffn\_base\_20250819\_205909 & 1000 & 0.035 & 0.203 & 0.173 & 0.284 & -0.062 & 0.568 & 0.020 & 0.027 \\
+ffn & bo & ffn\_bo\_20250819\_205910 & 1000 & 0.027 & 0.213 & 0.127 & 0.205 & -0.068 & 0.398 & 0.021 & 0.029 \\
+lstm & base & lstm\_base\_20250819\_205910 & 1000 & 0.029 & 0.213 & 0.134 & 0.223 & -0.059 & 0.483 & 0.021 & 0.027 \\
+lstm & bo & lstm\_bo\_20250819\_205909 & 1000 & 0.022 & 0.180 & 0.122 & 0.202 & -0.050 & 0.443 & 0.019 & 0.023 \\
+transformer & base & transformer\_base\_20250820\_010508 & 1000 & 0.026 & 0.207 & 0.124 & 0.212 & -0.053 & 0.489 & 0.020 & 0.026 \\
+transformer & bo & transformer\_bo\_20250820\_041922 & 1000 & 0.026 & 0.208 & 0.125 & 0.213 & -0.056 & 0.461 & 0.020 & 0.026 \\
+\bottomrule
+\end{tabular}
+\end{table}
